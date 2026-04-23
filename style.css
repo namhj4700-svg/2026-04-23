@@ -1,0 +1,196 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  background: #f0f4f8;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: 40px 16px;
+  color: #1a202c;
+}
+
+.container {
+  width: 100%;
+  max-width: 520px;
+}
+
+/* Header */
+header {
+  margin-bottom: 28px;
+}
+
+header h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #2d3748;
+}
+
+.today {
+  margin-top: 4px;
+  font-size: 0.9rem;
+  color: #718096;
+}
+
+/* Add form */
+.add-form {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.add-form input {
+  flex: 1;
+  padding: 10px 14px;
+  border: 2px solid #e2e8f0;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.2s;
+  background: #fff;
+}
+
+.add-form input:focus {
+  border-color: #667eea;
+}
+
+.add-form button {
+  padding: 10px 20px;
+  background: #667eea;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+  white-space: nowrap;
+}
+
+.add-form button:hover {
+  background: #5a67d8;
+}
+
+/* Habit list */
+.habit-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.habit-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: #fff;
+  border-radius: 14px;
+  padding: 16px 18px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+  transition: box-shadow 0.2s;
+}
+
+.habit-card:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Custom checkbox */
+.habit-card input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 22px;
+  height: 22px;
+  border: 2px solid #cbd5e0;
+  border-radius: 6px;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background 0.15s, border-color 0.15s;
+  position: relative;
+}
+
+.habit-card input[type="checkbox"]:checked {
+  background: #667eea;
+  border-color: #667eea;
+}
+
+.habit-card input[type="checkbox"]:checked::after {
+  content: '';
+  position: absolute;
+  left: 5px;
+  top: 2px;
+  width: 6px;
+  height: 11px;
+  border: 2px solid #fff;
+  border-top: none;
+  border-left: none;
+  transform: rotate(45deg);
+}
+
+/* Habit name */
+.habit-name {
+  flex: 1;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #2d3748;
+  word-break: break-all;
+}
+
+.habit-card.done .habit-name {
+  color: #a0aec0;
+  text-decoration: line-through;
+}
+
+/* Streak badge */
+.streak {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #e67e22;
+  background: #fef3e2;
+  padding: 4px 10px;
+  border-radius: 20px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.streak.zero {
+  color: #a0aec0;
+  background: #f7fafc;
+}
+
+/* Delete button */
+.delete-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #cbd5e0;
+  font-size: 1.1rem;
+  line-height: 1;
+  padding: 2px 4px;
+  border-radius: 4px;
+  flex-shrink: 0;
+  transition: color 0.15s;
+}
+
+.delete-btn:hover {
+  color: #fc8181;
+}
+
+/* Empty message */
+.empty-msg {
+  text-align: center;
+  color: #a0aec0;
+  font-size: 0.9rem;
+  margin-top: 40px;
+  display: none;
+}
+
+.empty-msg.visible {
+  display: block;
+}
